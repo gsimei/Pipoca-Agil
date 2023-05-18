@@ -3,6 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}\z/, message: "must include at least one letter, one number, and one special character" }
+         validates :email, uniqueness: { message: "Este e-mail já está cadastrado em nosso sistema. Por favor, faça login com sua conta existente ou utilize um endereço de e-mail diferente para criar um novo cadastro." }
+         attr_accessor :show_password
+
+         validate :validate_show_password
+
+         def validate_show_password
+           if show_password
+             # Validar a senha aqui se necessário
+           end
+         end
+         validates :agree_terms, acceptance: { message: "Você deve concordar com a Política de Privacidade e Termos de Uso" }
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
   # FOR TUTORIAL 1
   def self.from_google(u)
