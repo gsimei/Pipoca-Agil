@@ -1,25 +1,62 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-  <%= f.error_notification %>
+<style>
+  .rounded-input {
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #000000;
+    margin-bottom: 20px;
+  }
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+  .btn-custom {
+    color: #000000;
+    width: 180px;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="text-center">
+        <h2 style="font-weight: bold;">Crie sua conta</h2>
+      </div>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :name, required: true, autofocus: true, input_html: { autocomplete: "name", class: "rounded-input" }, label: false, placeholder: "Nome Completo *" %>
+          <%= f.input :date_of_birth, required: true, as: :string, input_html: { autocomplete: "off", class: "rounded-input", placeholder: "Data de Nascimento (dd/mm/aaaa) *" }, label: false %>
+
+          <%= f.input :email, required: true, input_html: { autocomplete: "email", class: "rounded-input" }, label: false, placeholder: "E-mail *" %>
+          <%= f.input :password, required: true, hint: ("Mínimo de #{@minimum_password_length} caracteres. Utilize letras, números e símbolos."), input_html: { autocomplete: "new-password", class: "rounded-input" }, label: false, placeholder: "Senha *" %>
+          <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "rounded-input" }, label: false, placeholder: "Confirmação de Senha *" %>
+          <%= f.input :agree_terms, as: :boolean, label: "Eu li e concordo com os termos de privacidade" %>
+        </div>
+
+       <div class="form-actions">
+  <div class="text-left">
+    <p>* Campos obrigatórios</p>
   </div>
+  <div class="text-center">
+  <%= f.button :submit, "Cadastrar", class: "btn btn-lg rounded-input btn-custom btn-light-gray btn-bold" %>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+
+</div>
+ </div>
+</div>
+</div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
+<style>
+.btn-light-gray {
+  background-color: #dddddd; /* Altere o valor para o cinza desejado */
+  color: #333333; /* Altere o valor para a cor desejada */
+}
 
-<%= render "devise/shared/links" %>
+.btn-bold {
+  font-weight: bold;
+}
