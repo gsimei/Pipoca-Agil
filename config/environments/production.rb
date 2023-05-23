@@ -3,6 +3,15 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
   # Settings specified here will take precedence over those in config/application.rb.
+  ActionMailer::Base.smtp_settings = {
+    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => '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', # Substitua 'NOVA_CHAVE_API' pela sua nova chave de API do SendGrid
+    :domain => 'localhost:3000',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
