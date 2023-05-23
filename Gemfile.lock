@@ -123,7 +123,6 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (6.4.0)
       sassc (~> 2.0)
-    foreman (0.87.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
@@ -317,7 +316,6 @@ DEPENDENCIES
   dotenv
   dotenv-rails
   font-awesome-sass (~> 6.1)
-  foreman
   jbuilder
   jsbundling-rails
   omniauth-facebook
