@@ -1,10 +1,12 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
+  devise :database_authenticatable, :registerable, :recoverable,
+         :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
+  devise :confirmable
 
   validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}\z/, message: "must include at least one letter, one number, and one special character" }
-  validates :email, uniqueness: { message: "Este e-mail já está cadastrado em nosso sistema. Por favor, faça login com sua conta existente ou utilize um endereço de e-mail diferente para criar um novo cadastro." }
+  validates :email, uniqueness: { message: "Este e-mail já está cadastrado em nosso sistema. Por favor, faça login com sua conta existente ou utilize um endereço de e-mail diferente." }
   attr_accessor :show_password
 
   validate :validate_show_password
@@ -28,3 +30,4 @@ class User < ApplicationRecord
     end
   end
 end
+

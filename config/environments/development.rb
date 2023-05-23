@@ -2,13 +2,24 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
+
+  ActionMailer::Base.smtp_settings = {
+    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => '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', # Substitua 'NOVA_CHAVE_API' pela sua nova chave de API do SendGrid
+    :domain => 'localhost:3000',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-  
+
 
   # Do not eager load code on boot.
   config.eager_load = false
