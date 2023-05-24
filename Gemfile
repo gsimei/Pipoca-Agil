@@ -51,6 +51,9 @@ gem "sassc-rails"
 gem "devise"
 gem "dotenv",require:"dotenv-rails"
 gem "dotenv-rails",require:"dotenv/rails-now"
+gem 'letter_opener', group: :development
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
@@ -81,6 +84,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "cloudinary"
-  gem 'sendgrid-ruby'
+  
 
 end
