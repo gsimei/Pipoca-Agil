@@ -4,7 +4,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
 
   ActionMailer::Base.smtp_settings = {
-    # Remova as linhas relacionadas às credenciais de API do SendGrid
+    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => ENV['SENDGRID_API_KEY'], # This is the secret sendgrid API key which was issued during API key creation
     :domain => 'localhost:3000',
     :address => 'smtp.sendgrid.net',
     :port => 587,
