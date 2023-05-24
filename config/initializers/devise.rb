@@ -25,16 +25,16 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'raque-leto@hotmail.com'
-  config.mailer_sender = 'raque-leto@hotmail.com'
 
 ActionMailer::Base.smtp_settings = {
-  # Remova as linhas relacionadas às credenciais de API do SendGrid
-  :domain => 'localhost:3000',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-}
+    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => ENV['SENDGRID_API_KEY'], # This is the secret sendgrid API key which was issued during API key creation
+    :domain => 'localhost:3000',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
 
   # Configure the class responsible to send e-mails.
