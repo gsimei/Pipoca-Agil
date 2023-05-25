@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "raque-leto@hotmail.com"
-  layout "mailer"
+  default from: 'ibson.pipocaagil@gmail.com'
+
+  layout 'mailer'
 end

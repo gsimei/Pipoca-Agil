@@ -1,10 +1,18 @@
 class User < ApplicationRecord
-  after_create :send_welcome_email
 
   # Devise modules
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
   devise :confirmable
+
+  after_create :welcome_user
+
+  private
+
+  def welcome_user
+    UserMailer.with(user: self)
+  end
+
 
   # Validations
   validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}\z/, message: "must include at least one letter, one number, and one special character" }
@@ -25,8 +33,9 @@ class User < ApplicationRecord
 
   # Callback to send welcome email
   def send_welcome_email
-    UserMailer.with(user: self).welcome.deliver_now
+    UserMailer.welcome(self).deliver_now
   end
+
 
   # Method to create a user from Google authentication
   def self.from_google(u)
