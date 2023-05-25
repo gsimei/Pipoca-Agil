@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
 
+  resources :registrations, only: [:new, :create], path: 'signup', path_names: { new: '' }
+
   delete 'users/sign_out', to: 'devise/sessions#destroy'
 
   get "/admin", to: "pages#admin", as: "admin"

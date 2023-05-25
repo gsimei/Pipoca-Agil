@@ -51,6 +51,9 @@ gem "sassc-rails"
 gem "devise"
 gem "dotenv",require:"dotenv-rails"
 gem "dotenv-rails",require:"dotenv/rails-now"
+gem 'letter_opener', group: :development
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
@@ -67,7 +70,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+gem "mailcatcher"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -81,6 +84,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "cloudinary"
-  gem 'sendgrid-ruby'
+  
 
 end
