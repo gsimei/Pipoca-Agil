@@ -31,16 +31,14 @@
           <%= f.input :email, required: true, input_html: { autocomplete: "email", class: "rounded-input" }, label: false, placeholder: "E-mail *" %>
           <%= f.input :password, required: true, hint: ("Mínimo de #{@minimum_password_length} caracteres. Utilize letras, números e símbolos."), input_html: { autocomplete: "new-password", class: "rounded-input" }, label: false, placeholder: "Senha *" %>
           <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "rounded-input" }, label: false, placeholder: "Confirmação de Senha *" %>
+            <p>* Campos obrigatórios</p>
           <%= f.input :agree_terms, as: :boolean, label: "Eu li e concordo com os termos de privacidade" %>
+          <%= f.input :agree_terms, as: :boolean, label: "Deseja receber atualizacoes por email?" %>
         </div>
-
-       <div class="form-actions">
-  <div class="text-left">
-    <p>* Campos obrigatórios</p>
-  </div>
   <div class="text-center">
   <%= f.button :submit, "Cadastrar", class: "btn btn-lg rounded-input btn-custom btn-light-gray btn-bold" %>
 </div>
+
 
 
 </div>

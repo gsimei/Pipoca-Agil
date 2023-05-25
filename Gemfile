@@ -81,5 +81,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "cloudinary"
+  gem 'sendgrid-ruby'
 
 end
