@@ -1,6 +1,8 @@
+
 class UserMailer < ApplicationMailer
-  def welcome(user)
+  def welcome_email(user)
     @user = user
-    mail(to: @user.email, subject: 'Welcome to Pipoca Ágil')
+    # Logic to send the welcome email to the user
+    mail(to: 'ibson.pipocaagil@gmail.com', subject: 'Welcome to Pipoca Agil')
   end
 end

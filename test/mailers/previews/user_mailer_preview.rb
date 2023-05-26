@@ -1,7 +1,7 @@
 class UserMailerPreview < ActionMailer::Preview
   def welcome
     user = User.first
-    # Chame o método welcome passando o objeto user como parâmetro
-    UserMailer.welcome(user)
+    # This is how you pass value to params[:user] inside mailer definition!
+    UserMailer.with(user: user).welcome
   end
 end
