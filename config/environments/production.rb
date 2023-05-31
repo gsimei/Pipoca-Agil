@@ -1,13 +1,20 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  # ...
-  config.action_mailer.delivery_method     = :postmark
-  config.action_mailer.postmark_settings   = { api_token: '07d45bb3-a6fb-402b-971f-cd31516ec8ea' }
-  config.action_mailer.default_url_options = { host: "https://pipocaagil.herokuapp.com/" }
-  # or your custom domain name eg. "www.yourdomain.com"
-  # Code is not reloaded between requests.
-  config.cache_classes = true
+  config.action_mailer.default_url_options = { host: "https://pipocaagil.org/" }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.postmarkapp.com",
+    port: 587,
+    domain: "pipocaagil.org",
+    user_name: "07d45bb3-a6fb-402b-971f-cd31516ec8ea",
+    password: "07d45bb3-a6fb-402b-971f-cd31516ec8ea",
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
+
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
