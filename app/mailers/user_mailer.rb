@@ -1,7 +1,9 @@
+
 class UserMailer < ApplicationMailer
-  def welcome
-    @user = params[:user] # Variável de instância => disponível na visualização
-    mail(to: @user.email, subject: 'Welcome to Le Wagon')
-    # Isso renderizará uma visualização em `app/views/user_mailer`!
+  def welcome(user)
+    @user = user
+    mail(to: @user.email, subject: 'Welcome to Pipoca Agil')
+   
+
   end
 end
