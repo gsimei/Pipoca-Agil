@@ -1,13 +1,12 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://localhost:3000" }
+  config.action_mailer.default_url_options = { host: "https://pipocaagil.herokuapp.com/" }
 
   config.action_mailer.delivery_method = :postmark
   config.action_mailer.postmark_settings = {
-    api_token: "e2d79cb9-2925-4b65-885f-914a82e75c88"
+    api_token: "07d45bb3-a6fb-402b-971f-cd31516ec8ea"
   }
-
 
   # Settings specified here will take precedence over those in config/application.rb.
 
