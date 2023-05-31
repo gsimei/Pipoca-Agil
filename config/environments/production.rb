@@ -4,7 +4,7 @@ Rails.application.configure do
   # ...
   config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_token: '07d45bb3-a6fb-402b-971f-cd31516ec8ea' }
-  config.action_mailer.default_url_options = { host:https:"//pipocaagil.herokuapp.com/" }
+  config.action_mailer.default_url_options = { host: "https://pipocaagil.herokuapp.com/" }
   # or your custom domain name eg. "www.yourdomain.com"
   # Code is not reloaded between requests.
   config.cache_classes = true
