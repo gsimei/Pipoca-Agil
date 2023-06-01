@@ -1,18 +1,20 @@
 
 
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "https://pipocaagil.org/" }
+  config.action_mailer.default_url_options = { host: 'pipocaagil3.herokuapp.com', protocol: 'https' }
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.postmarkapp.com",
-    port: 587,
-    domain: "pipocaagil.org",
-    user_name: "07d45bb3-a6fb-402b-971f-cd31516ec8ea",
-    password: "07d45bb3-a6fb-402b-971f-cd31516ec8ea",
-    authentication: "plain",
-    enable_starttls_auto: true
-  }
+config.action_mailer.smtp_settings = {
+  address: 'smtp.postmarkapp.com',
+  port: 587, # Ou utilize a porta 25 ou 2525, dependendo das suas necessidades
+  domain: 'pipocaagil3.herokuapp.com', # Substitua pelo seu domínio
+  user_name: '07d45bb3-a6fb-402b-971f-cd31516ec8ea', # Substitua pelo seu nome de usuário ou chave de acesso
+  password: 'KK05HUov0xfXW1BSuQaaIS6c5xIccRxKnJrT', # Substitua pela sua senha ou chave secreta
+  authentication: :plain, # Escolha a opção de autenticação apropriada, como :plain, :login ou :cram_md5
+  enable_starttls_auto: true, # Ative o uso do STARTTLS para criptografia
+  openssl_verify_mode: 'none' # Use 'none' se você estiver enfrentando problemas de verificação SSL
+}
+
 
 
 

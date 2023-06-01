@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Confirmação Pendente</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2; /* cor de fundo da página */
+    }
+
+    .logo {
+      margin-top: 30px;
+      margin-bottom: -10px; /* margem negativa para mover a logo para cima */
+    }
+
+    .logo img {
+      width: 200px; /* ajuste o tamanho conforme necessário */
+    }
+
+    .message-container {
+      background-color: #ffffff; /* fundo branco */
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px; /* bordas arredondadas */
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 700px; /* largura máxima do contêiner */
+    }
+
+    .message {
+      font-size: 16px;
+      color: #000000; /* preto mais forte */
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #000000;
+      text-decoration: none;
+      position: relative; /* torna o posicionamento relativo */
+      left: calc(-15% - 100px); /* ajusta o posicionamento ao centro */
+    }
+
+    .back-link::before {
+      content: "\2190 "; /* Caractere de seta voltada para a esquerda */
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dbtr2yaho/image/upload/v1684956837/Sem_t%C3%ADtulo_yfiutx.png" alt="Logo">
+  </div>
+  <div class="message-container">
+    <div class="message">
+      <p>Parabéns pelo cadastro! Para finalizar, confirme seu e-mail. Enviamos as instruções necessárias para sua caixa de entrada. Verifique também o spam.</p>
+    </div>
+  </div>
+  <a class="back-link" href="/">Voltar</a>
+</body>
+</html>

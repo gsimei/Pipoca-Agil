@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <style>
+    /* Add your custom CSS styles here */
+  </style>
+</head>
+<body>
+  <h1>Obrigado por se cadastrar no nosso site!</h1>
+
+  <p>Por favor, confirme o seu cadastro clicando no link abaixo:</p>
+
+  <p>
+    <a href="<%= confirmation_url(@user.confirmation_token) %>">Confirmar Cadastro</a>
+  </p>
+
+  <p>Atenciosamente,</p>
+  <p>Equipe do Pipoca Ágil</p>
+</body>
+</html>
