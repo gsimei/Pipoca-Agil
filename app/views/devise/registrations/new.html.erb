@@ -15,13 +15,13 @@
   }
 </style>
 
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-md-6 mx-auto">
       <div class="text-center">
         <h2 style="font-weight: bold;">Crie sua conta</h2>
       </div>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
@@ -35,20 +35,18 @@
           <%= f.input :agree_terms, as: :boolean, label: "Eu li e concordo com os termos de privacidade" %>
           <%= f.input :agree_terms, as: :boolean, label: "Deseja receber atualizacoes por email?" %>
         </div>
-  <div class="text-center">
-  <%= f.button :submit, "Cadastrar", class: "btn btn-lg rounded-input btn-custom btn-light-gray btn-bold" %>
-</div>
-
-
-
-</div>
- </div>
-</div>
-</div>
-      <% end %>
+        <div class="text-center">
+        <%= f.button :submit, "Cadastrar", class: "btn btn-lg rounded-input btn-custom btn-light-gray btn-bold" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
 <style>
 .btn-light-gray {
   background-color: #dddddd; /* Altere o valor para o cinza desejado */

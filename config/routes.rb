@@ -20,4 +20,3 @@ Rails.application.routes.draw do
 
   get '/admin', to: 'pages#admin', as: 'admin'
 end
-
