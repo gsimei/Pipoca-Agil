@@ -10,13 +10,16 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy'
     get '/confirmation_pending', to: 'registrations#confirmation_pending', as: 'confirmation_pending'
-
   end
 
   get '/users/signin', to: 'sessions#new', as: 'signin'
   get '/signup', to: 'registrations#new', as: 'signup'
 
-  resources :registrations, only: [:new, :create], path: 'signup', path_names: { new: '' }
+  resources :registrations, only: [:new, :create], path: 'signup', path_names: { new: '' } do
+    collection do
+      get 'confirmation_pending', to: 'registrations#confirmation_pending'
+    end
+  end
 
   delete '/users/sign_out', to: 'devise/sessions#destroy'
 
@@ -24,4 +27,7 @@ Rails.application.routes.draw do
   post '/email_confirmation/send_confirmation_email', to: 'email_confirmation#send_confirmation_email_request', as: 'send_confirmation_email'
 
   get '/admin', to: 'pages#admin', as: 'admin'
+
+  get '/confirmation_pending', to: redirect('/')
 end
+

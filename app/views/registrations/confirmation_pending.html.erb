@@ -35,6 +35,19 @@
       font-weight: bold;
       margin-bottom: 20px;
     }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #000000;
+      text-decoration: none;
+      position: relative; /* torna o posicionamento relativo */
+      left: calc(-15% - 100px); /* ajusta o posicionamento ao centro */
+    }
+
+    .back-link::before {
+      content: "\2190 "; /* Caractere de seta voltada para a esquerda */
+    }
   </style>
 </head>
 <body>
@@ -43,13 +56,9 @@
   </div>
   <div class="message-container">
     <div class="message">
-      <p>Enviamos um email de confirmação para você. Por favor, verifique a sua caixa de entrada ou a sua pasta de spam para concluir o seu cadastro.</p>
+      <p>Parabéns pelo cadastro! Para finalizar, confirme seu e-mail. Enviamos as instruções necessárias para sua caixa de entrada. Verifique também o spam.</p>
     </div>
   </div>
-  <div class="message-container">
-    <div class="message">
-      <p>Se você já se cadastrou no site Podcast Pipoca Ágil, por favor, ignore este email.</p>
-    </div>
-  </div>
+  <a class="back-link" href="/">Voltar</a>
 </body>
 </html>
