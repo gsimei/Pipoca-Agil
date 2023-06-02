@@ -13,9 +13,8 @@ class User < ApplicationRecord
     UserMailer.with(user: self)
   end
 
-
   # Validations
-  validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}\z/, message: "must include at least one letter, one number, and one special character" }
+  validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}\z/, message: "Must include at least one letter, one number, and one special character" }
   validates :email, uniqueness: { message: "Este e-mail já está cadastrado em nosso sistema. Por favor, faça login com sua conta existente ou utilize um endereço de e-mail diferente." }
   validates :agree_terms, acceptance: { message: "Você deve concordar com a Política de Privacidade e Termos de Uso" }
 

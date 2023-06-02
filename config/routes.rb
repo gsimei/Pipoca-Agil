@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   get '/admin', to: 'pages#admin', as: 'admin'
 
   get '/confirmation_pending', to: redirect('/')
+
+  get '/privacy', to: 'pages#privacy', as: 'privacy'
 end

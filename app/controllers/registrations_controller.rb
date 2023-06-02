@@ -1,4 +1,3 @@
-
 class RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
@@ -13,5 +12,9 @@ class RegistrationsController < Devise::RegistrationsController
       set_minimum_password_length
       respond_with resource
     end
+  end
+
+  def redirect_to_privacy
+    redirect_to privacy_path
   end
 end
