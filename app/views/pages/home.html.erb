@@ -17,18 +17,15 @@
   <div class="d-flex second-banner mt-5">
     <div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/FtMOybb4MoA" frameborder="0" allowfullscreen></iframe>
-
     </div>
-
     <div>
-  <h1>Video em Destaque</h1>
-  <p><strong>O primeiro Podcast carioca falando sobre agilidade.</strong></p>
-  <p><strong>Em parceria com Paulo Caroli</strong></p>
-</div>
-
+      <h1>Video em Destaque</h1>
+      <p><strong>O primeiro Podcast carioca falando sobre agilidade.</strong></p>
+      <p><strong>Em parceria com Paulo Caroli</strong></p>
+    </div>
   </div>
   <h1 class="title text-center mt-5">Últimos Episódios</h1>
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
     <div class="video-container">
       <div class="d-flex">
         <iframe width="280" height="157" src="https://www.youtube.com/embed/RrwXUZlvQ5s" frameborder="0" allowfullscreen></iframe>
@@ -36,7 +33,7 @@
           <h3>Pix - Desenvolvimento ágil</h3>
           <p>
             17 de janeiro de 2022<br>
-            Convidados: Caique, Nelson, Racioppi, Romulo, Meire, Guilherme, LP, Marcelo e Carlos.
+            Convidados: Caique, Nelson, Racioppi, Romulo, Guilherme, LP, Marcelo e Carlos.
           </p>
         </div>
       </div>
@@ -54,7 +51,8 @@
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-between">
+  <div style="margin-bottom: 120px;"></div>
+  <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
     <div class="video-container">
       <div class="d-flex">
         <iframe width="280" height="157" src="https://www.youtube.com/embed/PsJP7JHiQlA" frameborder="0" allowfullscreen></iframe>
@@ -81,31 +79,26 @@
     </div>
   </div>
 
+
+
   <h1 class="title text-center mt-5">Parcerias</h1>
-  <div class="logo-parcerias">
-    <div class="d-flex">
-      <%= image_tag "logos/logo_coach.jpg", class: "logo-img" %>
-      <%= image_tag "logos/logo_agiliza_ceara.jpg", class: "logo-img" %>
-      <%= image_tag "logos/logo_fleks.jpg", class: "logo-img" %>
-      <%= image_tag "logos/logo_conversa_agil.jpg", class: "logo-img" %>
-      <%= image_tag "logos/logo_inovacao.jpg", class: "logo-img" %>
-    </div>
-    <div class="d-flex">
-      <%= image_tag "logos/logo_rio_gamer.jpg", class: "logo-img" %>
-      <%= image_tag "logos/logo_fabrica.jpg", class: "logo-img" %>
-      <%= image_tag "logos/logo_inovagil.jpg", class: "logo-img" %>
-      <%= image_tag "logos/logo_iiba.jpg", class: "logo-img" %>
-      <%= image_tag "logos/logo_manifest.jpg", class: "logo-img" %>
-    </div>
+  <div class="logo-parcerias" style="margin-top: 20px;">
+  <div class="d-flex">
+    <%= image_tag "logos/logo_coach.jpg", class: "logo-img" %>
+    <%= image_tag "logos/logo_agiliza_ceara.jpg", class: "logo-img" %>
+    <%= image_tag "logos/logo_fleks.jpg", class: "logo-img" %>
+    <%= image_tag "logos/logo_conversa_agil.jpg", class: "logo-img" %>
+    <%= image_tag "logos/logo_inovacao.jpg", class: "logo-img" %>
   </div>
-  <h1 class="title text-center mt-5 pb-5">Ouça em:</h1>
-  <div class="d-flex justify-content-between logo-podcasts">
-    <%= image_tag "Icones_streaming/icone_spotify.jpg", class: "logo-podcast-img" %>
-    <%= image_tag "Icones_streaming/icone_anchor.jpg", class: "logo-podcast-img" %>
-    <%= image_tag "Icones_streaming/icone_google.jpg", class: "logo-podcast-img" %>
-    <%= image_tag "Icones_streaming/icone_overcast.jpg", class: "logo-podcast-img" %>
-    <%= image_tag "Icones_streaming/icone_podcast_apple.jpg", class: "logo-podcast-img" %>
+  <div class="d-flex">
+    <%= image_tag "logos/logo_rio_gamer.jpg", class: "logo-img" %>
+    <%= image_tag "logos/logo_fabrica.jpg", class: "logo-img" %>
+    <%= image_tag "logos/logo_inovagil.jpg", class: "logo-img" %>
+    <%= image_tag "logos/logo_iiba.jpg", class: "logo-img" %>
+    <%= image_tag "logos/logo_manifest.jpg", class: "logo-img" %>
   </div>
+</div>
+
   <h2 class="feedback text-center mt-5">Seu feedback é muito importante para nós!</h2>
   <div class="stars-container">
     <i class="fa-regular fa-star"></i>
@@ -115,5 +108,9 @@
     <i class="fa-regular fa-star"></i>
   </div>
   <br>
-  <textarea id="feedback" name="feedback" rows="8" cols="100"></textarea>
+  <div style="text-align: right;">
+    <textarea id="feedback" name="feedback" rows="8" cols="100"></textarea>
+    <br>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
 </div>
