@@ -87,6 +87,8 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.9.3, < 3)
       sassc-rails (>= 2.0.0)
+    bootstrap-datepicker-rails (1.10.0.1)
+      railties (>= 3.0)
     builder (3.2.4)
     capybara (3.39.1)
       addressable
@@ -321,11 +323,8 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-<<<<<<< HEAD
-  bootstrap-datepicker-rails
-=======
   bootstrap (~> 5.1.3)
->>>>>>> 982c0fcb7c2c7ee0f632b1fdbceb9c759b2be571
+  bootstrap-datepicker-rails
   capybara
   cloudinary
   debug
