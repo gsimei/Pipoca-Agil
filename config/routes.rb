@@ -12,9 +12,7 @@ Rails.application.routes.draw do
     get '/confirmation_pending', to: 'registrations#confirmation_pending', as: 'confirmation_pending'
   end
 
-  get '/users/signin', to: 'sessions#new', as: 'signin'
   get '/signup', to: 'registrations#new', as: 'signup'
-
   resources :registrations, only: [:new, :create], path: 'signup', path_names: { new: '' } do
     collection do
       get 'confirmation_pending', to: 'registrations#confirmation_pending'

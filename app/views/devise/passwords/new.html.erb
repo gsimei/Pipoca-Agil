@@ -1,7 +1,7 @@
 <style>
   .custom-input {
     border-radius: 10px;
-    border: 1px solid #000000; 
+    border: 1px solid #000000;
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -9,6 +9,7 @@
 </style>
 
 <div class="text-center">
+  <img src="https://res.cloudinary.com/dbtr2yaho/image/upload/v1685651699/logo_pipoca_agil_1_zmmdlk.png" alt="Logo" class="img-fluid" style="max-width: 350px;">
   <h2>Esqueceu sua senha?</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, wrapper_html: { class: 'custom-form' }) do |f| %>
@@ -18,11 +19,11 @@
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email", class: 'custom-input rounded-input mx-auto', style: 'max-width: 300px;', placeholder: 'E-mail *' } %>
+                  input_html: { autocomplete: "email", class: 'custom-input rounded-input mx-auto', style: 'max-width: 300px;', placeholder: 'E-mail' } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Send me reset password instructions", class: 'custom-button' %>
+      <%= f.button :submit, "Receber instrucao de redefinicao de senha por E-mail", class: 'custom-button' %>
     </div>
   <% end %>
 </div>
