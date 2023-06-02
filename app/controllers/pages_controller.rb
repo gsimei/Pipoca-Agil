@@ -12,4 +12,7 @@ class PagesController < ApplicationController
   def redirect_to_privacy
     redirect_to privacy_path
   end
+
+  def confirmation
+  end
 end
