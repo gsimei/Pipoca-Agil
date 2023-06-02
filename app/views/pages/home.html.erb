@@ -2,7 +2,7 @@
 <div class="container">
   <div class="d-flex first-banner">
     <div class="first-banner-left">
-      <h1>O Podcast mais animado do Mundo Ágil</h1>
+      <h1 style="margin-top: 60px;">O Podcast mais animado do Mundo Ágil</h1>
       <p>Cadastre-se no clube de assinantes e tenha acesso a todos os conteúdos exclusivos do mundo da tecnologia</p>
       <a class="btn btn-cadastrar" href="/users/sign_up" style="margin-bottom: 10px;">Cadastrar</a>
       <p id="possui-conta">
@@ -10,25 +10,61 @@
       </p>
     </div>
     <div class="first-banner-right">
-      <%= image_tag "Photos-Ibson/foto_ibson.png" %> <br>
+      <%= image_tag "Photos-Ibson/foto_ibson.png", style: "margin-top: 50px;" %> <br>
       <%= link_to "Acesse a trilha do conhecimento", root_path, style: "color: #000; margin-right: 5px;" %>
     </div>
   </div>
-  <div class="d-flex second-banner mt-5">
+  <div class="d-flex second-banner mt-5  py-5">
     <div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/FtMOybb4MoA" frameborder="0" allowfullscreen></iframe>
+
     </div>
+
     <div>
-      <h1>Video em Destaque</h1>
+      <h1 style="margin-top: 0px;">Video em Destaque</h1>
       <p><strong>O primeiro Podcast carioca falando sobre agilidade.</strong></p>
       <p><strong>Em parceria com Paulo Caroli</strong></p>
     </div>
+
   </div>
+<style>
+  .video-container {
+    margin-right: 20px;
+  }
+
+  .video-container iframe {
+    width: 280px;
+    height: 157px;
+  }
+
+  .video-description {
+    margin-top: 10px;
+  }
+
+  .video-description h3 {
+    margin-bottom: 8px;
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  .description-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .description-container .video-description {
+    margin-left: 15px;
+    width: 400px;
+  }
+</style>
+
+<div class="container">
   <h1 class="title text-center mt-5">Últimos Episódios</h1>
-  <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
-    <div class="video-container">
-      <div class="d-flex">
-        <iframe width="280" height="157" src="https://www.youtube.com/embed/RrwXUZlvQ5s" frameborder="0" allowfullscreen></iframe>
+  <div class="d-flex justify-content-between flex-row" style="margin-bottom: 40px;">
+    <div class="video-container" style="width: 380px; margin-right: 20px;">
+      <div class="d-flex align-items-center description-container">
+        <iframe src="https://www.youtube.com/embed/RrwXUZlvQ5s" frameborder="0" allowfullscreen></iframe>
         <div class="video-description">
           <h3>Pix - Desenvolvimento ágil</h3>
           <p>
@@ -38,9 +74,9 @@
         </div>
       </div>
     </div>
-    <div class="video-container">
-      <div class="d-flex">
-        <iframe width="280" height="157" src="https://www.youtube.com/embed/DbWVH3Jrl7U" frameborder="0" allowfullscreen></iframe>
+    <div class="video-container" style="width: 380px; margin-right: 20px;">
+      <div class="d-flex align-items-center description-container">
+        <iframe src="https://www.youtube.com/embed/DbWVH3Jrl7U" frameborder="0" allowfullscreen></iframe>
         <div class="video-description">
           <h3>Clínica KANBAN</h3>
           <p>
@@ -51,11 +87,10 @@
       </div>
     </div>
   </div>
-  <div style="margin-bottom: 120px;"></div>
-  <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
-    <div class="video-container">
-      <div class="d-flex">
-        <iframe width="280" height="157" src="https://www.youtube.com/embed/PsJP7JHiQlA" frameborder="0" allowfullscreen></iframe>
+  <div class="d-flex justify-content-between flex-row">
+    <div class="video-container" style="width: 380px; margin-right: 60px;">
+      <div class="d-flex align-items-center description-container">
+        <iframe src="https://www.youtube.com/embed/PsJP7JHiQlA" frameborder="0" allowfullscreen></iframe>
         <div class="video-description">
           <h3>Cliente Ágil</h3>
           <p>
@@ -65,9 +100,9 @@
         </div>
       </div>
     </div>
-    <div class="video-container">
-      <div class="d-flex">
-        <iframe width="280" height="157" src="https://www.youtube.com/embed/679b8Ku9lu0" frameborder="0" allowfullscreen></iframe>
+    <div class="video-container" style="width: 380px; margin-right: 0;">
+      <div class="d-flex align-items-center description-container">
+        <iframe src="https://www.youtube.com/embed/679b8Ku9lu0" frameborder="0" allowfullscreen></iframe>
         <div class="video-description">
           <h3>Agilidade em Portugal</h3>
           <p>
@@ -78,39 +113,124 @@
       </div>
     </div>
   </div>
+</div>
+
+
+
 
 
 
   <h1 class="title text-center mt-5">Parcerias</h1>
-  <div class="logo-parcerias" style="margin-top: 20px;">
-  <div class="d-flex">
-    <%= image_tag "logos/logo_coach.jpg", class: "logo-img" %>
-    <%= image_tag "logos/logo_agiliza_ceara.jpg", class: "logo-img" %>
-    <%= image_tag "logos/logo_fleks.jpg", class: "logo-img" %>
-    <%= image_tag "logos/logo_conversa_agil.jpg", class: "logo-img" %>
-    <%= image_tag "logos/logo_inovacao.jpg", class: "logo-img" %>
+  <div class="logo-parcerias">
+    <div class="d-flex">
+      <%= image_tag "logos/logo_coach.jpg", class: "logo-img" %>
+      <%= image_tag "logos/logo_agiliza_ceara.jpg", class: "logo-img" %>
+      <%= image_tag "logos/logo_fleks.jpg", class: "logo-img" %>
+      <%= image_tag "logos/logo_conversa_agil.jpg", class: "logo-img" %>
+      <%= image_tag "logos/logo_inovacao.jpg", class: "logo-img" %>
+    </div>
+    <div class="d-flex">
+      <%= image_tag "logos/logo_rio_gamer.jpg", class: "logo-img" %>
+      <%= image_tag "logos/logo_fabrica.jpg", class: "logo-img" %>
+      <%= image_tag "logos/logo_inovagil.jpg", class: "logo-img" %>
+      <%= image_tag "logos/logo_iiba.jpg", class: "logo-img" %>
+      <%= image_tag "logos/logo_manifest.jpg", class: "logo-img" %>
+    </div>
   </div>
-  <div class="d-flex">
-    <%= image_tag "logos/logo_rio_gamer.jpg", class: "logo-img" %>
-    <%= image_tag "logos/logo_fabrica.jpg", class: "logo-img" %>
-    <%= image_tag "logos/logo_inovagil.jpg", class: "logo-img" %>
-    <%= image_tag "logos/logo_iiba.jpg", class: "logo-img" %>
-    <%= image_tag "logos/logo_manifest.jpg", class: "logo-img" %>
+  <h1 class="title text-center mt-5 pb-5">Ouça em:</h1>
+  <div class="d-flex justify-content-between logo-podcasts">
+    <%= image_tag "Icones_streaming/icone_spotify.jpg", class: "logo-podcast-img" %>
+    <%= image_tag "Icones_streaming/icone_anchor.jpg", class: "logo-podcast-img" %>
+    <%= image_tag "Icones_streaming/icone_google.jpg", class: "logo-podcast-img" %>
+    <%= image_tag "Icones_streaming/icone_overcast.jpg", class: "logo-podcast-img" %>
+    <%= image_tag "Icones_streaming/icone_podcast_apple.jpg", class: "logo-podcast-img" %>
   </div>
-</div>
+  <div>
+  <div>
+  <div>
 
-  <h2 class="feedback text-center mt-5">Seu feedback é muito importante para nós!</h2>
-  <div class="stars-container">
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-  </div>
-  <br>
-  <div style="text-align: right;">
-    <textarea id="feedback" name="feedback" rows="8" cols="100"></textarea>
-    <br>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<style>
+  .star {
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  .star.checked {
+    color: gold;
+  }
+
+  .rounded-border {
+    border-radius: 10px;
+  }
+
+  .btn-send {
+    padding: 12px 40px;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .btn-send span {
+    color: black;
+  }
+  .btn-shadow {
+  box-shadow: 10px 40px 4px rgba(0, 0, 0, 0.4);
+}
+.btn-send span {
+  font-size: 28px;
+  font-weight: bold;
+}
+.btn-send {
+  padding: 8px 50px;
+  border-width: 2px;
+}
+
+
+</style>
+
+<h2 class="feedback text-center mt-5">Seu feedback é muito importante para nós!</h2>
+<div class="stars-container">
+  <i class="fas fa-star star" onclick="rateStar(1)"></i>
+  <i class="fas fa-star star" onclick="rateStar(2)"></i>
+  <i class="fas fa-star star" onclick="rateStar(3)"></i>
+  <i class="fas fa-star star" onclick="rateStar(4)"></i>
+  <i class="fas fa-star star" onclick="rateStar(5)"></i>
 </div>
+<br>
+<div style="text-align: right;">
+  <textarea id="feedback" name="feedback" rows="8" cols="100" class="rounded-border"></textarea>
+  <br>
+<button type="submit" class="btn btn-send rounded-border btn-shadow" onclick="submitFeedback()"><span class="btn-text">Enviar</span></button>
+</div>
+<script>
+  let selectedStar = 0;
+
+  function rateStar(star) {
+    selectedStar = star;
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star, index) => {
+      if (index < selectedStar) {
+        star.classList.add('checked');
+      } else {
+        star.classList.remove('checked');
+      }
+    });
+  }
+
+  function submitFeedback() {
+    const feedback = document.getElementById('feedback').value;
+    console.log(`Feedback: ${feedback}`);
+    console.log(`Rating: ${selectedStar}`);
+    document.getElementById('feedback').value = '';
+    selectedStar = 0;
+    rateStar(0);
+    alert('Obrigado pelo seu feedback!');
+  }
+</script>
