@@ -26,6 +26,7 @@
 
         <div class="form-inputs">
           <%= f.input :name, required: true, autofocus: true, input_html: { autocomplete: "name", class: "rounded-input" }, label: false, placeholder: "Nome Completo *" %>
+
           <%= f.input :date_of_birth, required: true, as: :string, input_html: { autocomplete: "off", class: "rounded-input", placeholder: "Data de Nascimento (dd/mm/aaaa) *" }, label: false %>
 
           <%= f.input :email, required: true, input_html: { autocomplete: "email", class: "rounded-input" }, label: false, placeholder: "E-mail *" %>
