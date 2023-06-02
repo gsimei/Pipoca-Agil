@@ -14,4 +14,8 @@ class RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
   end
+
+  def redirect_to_privacy
+    redirect_to privacy_path
+  end
 end
