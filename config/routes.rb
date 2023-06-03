@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "pages#home"
-  
+
   devise_for :users, controllers: {
     confirmations: 'custom_confirmations',
     omniauth_callbacks: 'users/omniauth_callbacks',
@@ -28,4 +28,5 @@ Rails.application.routes.draw do
 
   get '/confirmation_pending', to: redirect('/')
 
+  get "/privacy", to: "pages#privacy", as: "privacy"
 end

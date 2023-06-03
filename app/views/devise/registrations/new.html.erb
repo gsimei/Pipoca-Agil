@@ -13,6 +13,16 @@
     background-color: #6c757d;
     border-color: #6c757d;
   }
+
+  .btn-privacy {
+  color: darkblue;
+  text-decoration: none;
+  margin-top: 0px;
+  }
+
+  .btn-privacy:hover {
+    color: blue;
+  }
 </style>
 
 <div class="container mt-5">
@@ -34,8 +44,8 @@
           <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "rounded-input" }, label: false, placeholder: "Confirmação de Senha *" %>
             <p>* Campos obrigatórios</p>
 
-<%= f.input :agree_terms, as: :boolean, label: link_to("Eu li e concordo com os termos de privacidade", privacy_path) %>
-
+          <%= f.input :agree_terms, as: :boolean, label: "Eu li e concordo com os termos de privacidade" %>
+          <%= link_to "Clique aqui para ver a nossa Política de Privacidade", privacy_path, class: "btn-privacy" %>
 
           <%= f.input :agree_terms, as: :boolean, label: "Deseja receber atualizacoes por email?" %>
         </div>
