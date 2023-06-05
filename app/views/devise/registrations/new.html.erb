@@ -15,9 +15,9 @@
   }
 
   .btn-privacy {
-  color: darkblue;
-  text-decoration: none;
-  margin-top: 0px;
+    color: darkblue;
+    text-decoration: none;
+    margin-top: 0px;
   }
 
   .btn-privacy:hover {
@@ -25,6 +25,15 @@
   }
 </style>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-6 mx-auto">
@@ -40,8 +49,11 @@
           <%= f.input :date_of_birth, required: true, as: :string, input_html: { autocomplete: "off", class: "rounded-input", placeholder: "Data de Nascimento (dd/mm/aaaa) *" }, label: false %>
 
           <%= f.input :email, required: true, input_html: { autocomplete: "email", class: "rounded-input" }, label: false, placeholder: "E-mail *" %>
-          <%= f.input :password, required: true, hint: ("Mínimo de #{@minimum_password_length} caracteres. Utilize letras, números e símbolos."), input_html: { autocomplete: "new-password", class: "rounded-input" }, label: false, placeholder: "Senha *" %>
-          <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "rounded-input" }, label: false, placeholder: "Confirmação de Senha *" %>
+          <%= f.input :password, required: true, hint: ("Mínimo de #{@minimum_password_length} caracteres. Utilize letras, números e símbolos."), input_html: { autocomplete: "new-password", class: "rounded-input", type: 'password', id: 'password' }, label: false, placeholder: "Senha *" %>
+          <button type="button" onclick="togglePasswordVisibility('password')">Show Password</button>
+
+          <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "rounded-input", type: 'password', id: 'password_confirmation' }, label: false, placeholder: "Confirmação de Senha *" %>
+          <button type="button" onclick="togglePasswordVisibility('password_confirmation')">Show Password</button>
             <p>* Campos obrigatórios</p>
 
           <%= f.input :agree_terms, as: :boolean, label: "Eu li e concordo com os termos de privacidade" %>
@@ -60,6 +72,20 @@
     </div>
   </div>
 </div>
+</body>
+</html>
+
+<script>
+function togglePasswordVisibility(id) {
+  var x = document.getElementById(id);
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
 
 <style>
 .btn-light-gray {
