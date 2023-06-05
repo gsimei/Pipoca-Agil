@@ -50,6 +50,7 @@
 
           <%= f.input :email, required: true, input_html: { autocomplete: "email", class: "rounded-input" }, label: false, placeholder: "E-mail *" %>
           <%= f.input :password, required: true, hint: ("Mínimo de #{@minimum_password_length} caracteres. Utilize letras, números e símbolos."), input_html: { autocomplete: "new-password", class: "rounded-input", type: 'password', id: 'password' }, label: false, placeholder: "Senha *" %>
+          <i class="fa-regular fa-eye"></i>
           <button type="button" onclick="togglePasswordVisibility('password')">Show Password</button>
 
           <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "rounded-input", type: 'password', id: 'password_confirmation' }, label: false, placeholder: "Confirmação de Senha *" %>
@@ -74,18 +75,6 @@
 </div>
 </body>
 </html>
-
-<script>
-function togglePasswordVisibility(id) {
-  var x = document.getElementById(id);
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-</script>
-
 
 <style>
 .btn-light-gray {
